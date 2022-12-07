@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:animated_background/animated_background.dart';
 
 class LandingPage extends StatefulWidget {
+  const LandingPage({super.key});
+
   @override
   State<LandingPage> createState() => _LandingPageState();
 }
@@ -19,30 +21,29 @@ class _LandingPageState extends State<LandingPage> {
             //       BoxDecoration(borderRadius: BorderRadius.circular(40)),
             //   height: 120,
             //   child: Image.asset(
-            //     "assets/images/newLogo.png",
+            //     "assets/images/S2Qq2.png",
             //     fit: BoxFit.cover,
             //   ),
             // ),
             // SizedBox(
             //   height: 10,
             // ),
-            Text(
+            const Text(
               "S2Q2 \nConsulting",
               style: TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 60.0,
                   color: Colors.white),
             ),
-            Padding(
-              padding:
-                  const EdgeInsets.symmetric(vertical: 20.0, horizontal: 10),
+            const Padding(
+              padding: EdgeInsets.symmetric(vertical: 20.0, horizontal: 10),
               child: Text(
                 "Simple. Satisfactory. Quick. Quality",
                 style: TextStyle(fontSize: 18.0, color: Colors.white),
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.symmetric(vertical: 20.0),
+            const Padding(
+              padding: EdgeInsets.symmetric(vertical: 20.0),
               child: Text(
                 "We belive in quickly providing quality solution that are simple, and ensure costomer satisfacation.",
                 style: TextStyle(fontSize: 26.0, color: Colors.white),
@@ -50,12 +51,11 @@ class _LandingPageState extends State<LandingPage> {
             ),
             MaterialButton(
               color: Colors.white,
-              shape: RoundedRectangleBorder(
+              shape: const RoundedRectangleBorder(
                   borderRadius: BorderRadius.all(Radius.circular(20.0))),
               onPressed: () {},
-              child: Padding(
-                padding: const EdgeInsets.symmetric(
-                    vertical: 20.0, horizontal: 40.0),
+              child: const Padding(
+                padding: EdgeInsets.symmetric(vertical: 20.0, horizontal: 40.0),
                 child: Text(
                   "Our Packages",
                   style: TextStyle(color: Colors.red),
