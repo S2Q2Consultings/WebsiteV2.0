@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:s2q2_website/pages/career.dart';
 
 class Navbar extends StatelessWidget {
   const Navbar({super.key});
@@ -76,9 +77,17 @@ class DesktopNavbar extends StatelessWidget {
                 const SizedBox(
                   width: 30,
                 ),
-                const Text(
-                  "Career",
-                  style: TextStyle(color: Colors.white),
+                InkWell(
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: ((context) => const Careers())));
+                  },
+                  child: const Text(
+                    "Career",
+                    style: TextStyle(color: Colors.white),
+                  ),
                 ),
                 const SizedBox(
                   width: 30,

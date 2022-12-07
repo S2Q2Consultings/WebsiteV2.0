@@ -35,13 +35,16 @@ class Careers extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 40),
-          const Text(
-            'We are a group of focused, dedicated and proficient developers who convert\n'
-            'needs into solutions. If you think you have the same view,share your\n'
-            'details here',
-            style: TextStyle(
-              fontSize: 26.0,
-              color: Colors.black,
+          const Padding(
+            padding: EdgeInsets.all(10.0),
+            child: Text(
+              'We are a group of focused, dedicated and proficient developers who convert\n'
+              'needs into solutions. If you think you have the same view,share your\n'
+              'details here',
+              style: TextStyle(
+                fontSize: 26.0,
+                color: Colors.black,
+              ),
             ),
           ),
           const SizedBox(height: 50),

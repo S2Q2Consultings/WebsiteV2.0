@@ -46,7 +46,7 @@ class _EndPageState extends State<EndPage> {
                     ),
                   ),
                   Text(
-                    "Communication Media & Technology",
+                    "Communication Media",
                     style: TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.bold,
@@ -78,7 +78,7 @@ class _EndPageState extends State<EndPage> {
                     ),
                   ),
                   Text(
-                    "Travel, Transportation & Hospitality",
+                    "Travel, Transportation",
                     style: TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.bold,
@@ -87,6 +87,22 @@ class _EndPageState extends State<EndPage> {
                   ),
                   Text(
                     "Life Science & Healthcare",
+                    style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                    ),
+                  ),
+                  Text(
+                    "Hospitality",
+                    style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                    ),
+                  ),
+                  Text(
+                    "Technology",
                     style: TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.bold,

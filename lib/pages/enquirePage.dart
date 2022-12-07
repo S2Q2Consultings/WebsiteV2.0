@@ -185,7 +185,7 @@ class _EnquirePageState extends State<EnquirePage> {
             child: Container(
               padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 20),
               decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(30.0),
+                  borderRadius: BorderRadius.circular(13.0),
                   gradient: const LinearGradient(colors: [
                     Colors.blue,
                     Color.fromARGB(255, 101, 18, 115)
