@@ -66,7 +66,7 @@ class _LandingPageState extends State<LandingPage> {
         ),
       ),
       Padding(
-        padding: const EdgeInsets.symmetric(vertical: 20.0),
+        padding: const EdgeInsets.fromLTRB(0, 20, 0, 15),
         child: Image.asset(
           "assets/images/lp_image.png",
           width: width,
@@ -79,7 +79,7 @@ class _LandingPageState extends State<LandingPage> {
   Widget build(BuildContext context) {
     return LayoutBuilder(
       builder: (context, constraints) {
-        if (constraints.maxWidth > 800) {
+        if (constraints.maxWidth > 1060) {
           return Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: pageChildren(constraints.biggest.width / 2),

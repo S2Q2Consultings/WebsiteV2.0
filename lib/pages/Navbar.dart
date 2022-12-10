@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:s2q2_website/pages/career.dart';
 
 class Navbar extends StatelessWidget {
   const Navbar({super.key});
@@ -10,7 +9,7 @@ class Navbar extends StatelessWidget {
       builder: (context, constraints) {
         if (constraints.maxWidth > 1200) {
           return const DesktopNavbar();
-        } else if (constraints.maxWidth > 1000 && constraints.maxWidth < 1200) {
+        } else if (constraints.maxWidth > 950 && constraints.maxWidth < 1200) {
           return const DesktopNavbar();
         } else {
           return const MobileNavbar();
@@ -32,11 +31,16 @@ class DesktopNavbar extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
             Container(
-              padding: const EdgeInsets.fromLTRB(0, 2.3, 14.0, 2.3),
+              padding: const EdgeInsets.fromLTRB(5, 2.3, 14.0, 2.3),
               decoration: BoxDecoration(
+                  border: Border.all(
+                    color: Colors.white,
+                    width: 1,
+                  ),
                   borderRadius: BorderRadius.circular(30),
                   color: Colors.black54),
               child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: const [
                   CircleAvatar(
                     backgroundImage: AssetImage('assets/images/newLogo.png'),
@@ -78,12 +82,7 @@ class DesktopNavbar extends StatelessWidget {
                   width: 30,
                 ),
                 InkWell(
-                  onTap: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: ((context) => const Careers())));
-                  },
+                  onTap: () {},
                   child: const Text(
                     "Career",
                     style: TextStyle(color: Colors.white),
@@ -132,96 +131,103 @@ class _MobileNavbarState extends State<MobileNavbar> {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 40),
       child: Container(
-        child: Column(children: <Widget>[
-          Row(
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: [
-              InkWell(
-                onTap: () {
-                  setState(() {
-                    _isHovering ? _isHovering = false : _isHovering = true;
-                  });
-                },
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Container(
-                      padding: const EdgeInsets.all(7.0),
-                      color: Colors.white70,
-                      child: const Icon(Icons.menu),
-                    ),
-                    // const SizedBox(height: 5),
-                    // Visibility(
-                    //   maintainAnimation: true,
-                    //   maintainState: true,
-                    //   maintainSize: true,
-                    //   visible: _isHovering,
-                    //   child: Container(
-                    //     height: 325,
-                    //     width: 325,
-                    //     color: Color.fromARGB(255, 0, 0, 0),
-                    //   ),
-                    // )
-                  ],
-                ),
-              ),
-            ],
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Container(
-                padding: const EdgeInsets.fromLTRB(0, 2.3, 14.0, 2.3),
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(30),
-                    color: Colors.black54),
-                child: Row(
-                  children: const [
-                    CircleAvatar(
-                      backgroundImage: AssetImage('assets/images/newLogo.png'),
-                    ),
-                    SizedBox(
-                      width: 10,
-                    ),
-                    Text(
-                      "S2Q2 Consulting",
-                      style: TextStyle(
-                          fontWeight: FontWeight.bold,
+        child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: <Widget>[
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Container(
+                    padding: const EdgeInsets.fromLTRB(5, 2.3, 14.0, 2.3),
+                    decoration: BoxDecoration(
+                        border: Border.all(
                           color: Colors.white,
-                          fontSize: 30),
+                          width: 1,
+                        ),
+                        borderRadius: BorderRadius.circular(30),
+                        color: Colors.black54),
+                    child: Row(
+                      children: const [
+                        CircleAvatar(
+                          backgroundImage:
+                              AssetImage('assets/images/newLogo.png'),
+                        ),
+                        SizedBox(
+                          width: 10,
+                        ),
+                        Text(
+                          "S2Q2 Consulting",
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white,
+                              fontSize: 20),
+                        ),
+                      ],
                     ),
-                  ],
-                ),
+                  ),
+                ],
               ),
-            ],
-          ),
-          // Padding(
-          //   padding: const EdgeInsets.all(12.0),
-          //   child: Row(
-          //     mainAxisAlignment: MainAxisAlignment.center,
-          //     children: const <Widget>[
-          //       Text(
-          //         "Home",
-          //         style: TextStyle(color: Colors.white),
-          //       ),
-          //       SizedBox(
-          //         width: 30,
-          //       ),
-          //       Text(
-          //         "About Us",
-          //         style: TextStyle(color: Colors.white),
-          //       ),
-          //       SizedBox(
-          //         width: 30,
-          //       ),
-          //       Text(
-          //         "Tech",
-          //         style: TextStyle(color: Colors.white),
-          //       ),
-          //     ],
-          //   ),
-          // )
-        ]),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  InkWell(
+                    onTap: () {
+                      setState(() {
+                        _isHovering ? _isHovering = false : _isHovering = true;
+                      });
+                    },
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Container(
+                          padding: const EdgeInsets.all(7.0),
+                          color: Colors.white70,
+                          child: const Icon(Icons.menu),
+                        ),
+                        // const SizedBox(height: 5),
+                        // Visibility(
+                        //   maintainAnimation: true,
+                        //   maintainState: true,
+                        //   maintainSize: true,
+                        //   visible: _isHovering,
+                        //   child: Container(
+                        //     height: 325,
+                        //     width: 325,
+                        //     color: Color.fromARGB(255, 0, 0, 0),
+                        //   ),
+                        // )
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+              // Padding(
+              //   padding: const EdgeInsets.all(12.0),
+              //   child: Row(
+              //     mainAxisAlignment: MainAxisAlignment.center,
+              //     children: const <Widget>[
+              //       Text(
+              //         "Home",
+              //         style: TextStyle(color: Colors.white),
+              //       ),
+              //       SizedBox(
+              //         width: 30,
+              //       ),
+              //       Text(
+              //         "About Us",
+              //         style: TextStyle(color: Colors.white),
+              //       ),
+              //       SizedBox(
+              //         width: 30,
+              //       ),
+              //       Text(
+              //         "Tech",
+              //         style: TextStyle(color: Colors.white),
+              //       ),
+              //     ],
+              //   ),
+              // )
+            ]),
       ),
     );
   }
