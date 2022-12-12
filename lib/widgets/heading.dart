@@ -116,7 +116,7 @@ class FeedbackClient extends StatelessWidget {
         children: [
           SectionTitle(
             color: Colors.pink,
-            title: "Feedback Received",
+            title: "Feedbacks",
             subTitle: "Client's Testimonials that inspired us a lot",
             scrsize: scrsize,
           ),
