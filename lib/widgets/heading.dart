@@ -16,7 +16,7 @@ class ServiceSection extends StatelessWidget {
         children: [
           SectionTitle(
             color: Color(0xFFFF0000),
-            title: "Service Offerings",
+            title: "Services Offering",
             subTitle: "What We Provide",
             scrsize: scrsize,
           ),

@@ -18,7 +18,7 @@ class _ClientfeedbackState extends State<Clientfeedback> {
   Widget build(BuildContext context) {
     return LayoutBuilder(
       builder: (context, constraints) {
-        if (constraints.maxWidth > 800) {
+        if (constraints.maxWidth > 1200) {
           return Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: pageChildren(constraints.biggest.width / 3),

@@ -146,7 +146,7 @@ class _RecentWorkState extends State<RecentWork> {
   Widget build(BuildContext context) {
     return LayoutBuilder(
       builder: (context, constraints) {
-        if (constraints.maxWidth > 1100) {
+        if (constraints.maxWidth > 1400) {
           return Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: pageChildren(constraints.biggest.width / 3),
