@@ -270,6 +270,14 @@ class _EnquirePageState extends State<EnquirePage> {
                 }),
               );
               launchUrl(emailLaunchUri);
+              showDialog(
+                context: context,
+                builder: (context) {
+                  return AlertDialog(
+                    title: Text('Enquiry Sent Successfully!'),
+                  );
+                },
+              );
             },
             child: Container(
               padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 18),
