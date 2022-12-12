@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:simple_gradient_text/simple_gradient_text.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class EnquirePage extends StatefulWidget {
   const EnquirePage({super.key});
@@ -11,6 +12,11 @@ class EnquirePage extends StatefulWidget {
 class _EnquirePageState extends State<EnquirePage> {
   @override
   Widget build(BuildContext context) {
+    final email = TextEditingController();
+    final body = TextEditingController();
+    final name = TextEditingController();
+    final number = TextEditingController();
+    final companyName = TextEditingController();
     return Container(
       child: Column(
         children: [
@@ -43,6 +49,7 @@ class _EnquirePageState extends State<EnquirePage> {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 35, vertical: 16),
             child: TextFormField(
+              controller: name,
               cursorColor: Colors.black,
               decoration: InputDecoration(
                 icon: const Icon(
@@ -82,6 +89,7 @@ class _EnquirePageState extends State<EnquirePage> {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 35, vertical: 16),
             child: TextFormField(
+              controller: number,
               cursorColor: Colors.black,
               decoration: InputDecoration(
                 icon: const Icon(
@@ -121,6 +129,7 @@ class _EnquirePageState extends State<EnquirePage> {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 35, vertical: 16),
             child: TextFormField(
+              controller: companyName,
               cursorColor: Colors.black,
               decoration: InputDecoration(
                 icon: const Icon(
@@ -160,6 +169,7 @@ class _EnquirePageState extends State<EnquirePage> {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 35, vertical: 16),
             child: TextFormField(
+              controller: email,
               cursorColor: Colors.black,
               decoration: InputDecoration(
                 icon: const Icon(
@@ -199,6 +209,7 @@ class _EnquirePageState extends State<EnquirePage> {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 35, vertical: 16),
             child: TextFormField(
+              controller: body,
               cursorColor: Colors.black,
               maxLines: 7,
               minLines: 1,
@@ -241,7 +252,25 @@ class _EnquirePageState extends State<EnquirePage> {
             height: 20,
           ),
           InkWell(
-            onTap: () {},
+            onTap: () async {
+              String? encodeQueryParameters(Map<String, String> params) {
+                return params.entries
+                    .map((MapEntry<String, String> e) =>
+                        '${Uri.encodeComponent(e.key)}=${Uri.encodeComponent(e.value)}')
+                    .join('&');
+              }
+
+              final Uri emailLaunchUri = Uri(
+                scheme: 'mailto',
+                path: email.text,
+                query: encodeQueryParameters(<String, String>{
+                  'subject': 'Enquiry',
+                  'body':
+                      '${name.text} \n${number.text} \n${companyName.text} \n${body.text}  ',
+                }),
+              );
+              launchUrl(emailLaunchUri);
+            },
             child: Container(
               padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 18),
               decoration: BoxDecoration(

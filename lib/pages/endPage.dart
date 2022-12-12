@@ -1,4 +1,8 @@
+import 'dart:html' as html;
+
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 
 class EndPage extends StatefulWidget {
   const EndPage({super.key});
@@ -254,20 +258,40 @@ class _EndPageState extends State<EndPage> {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
-                        Image.asset(
-                          "assets/images/twitter.png",
-                          width: 30,
-                          height: 30,
+                        GestureDetector(
+                          onTap: () async {
+                            html.window.open(
+                                'https://twitter.com/s2q2_c/status/1597301150881316865?s=48&t=EjQhTzE7hqLK-zz2Y2W1BA',
+                                '_self');
+                          },
+                          child: Image.asset(
+                            "assets/images/twitter.png",
+                            width: 30,
+                            height: 30,
+                          ),
                         ),
-                        Image.asset(
-                          "assets/images/linkedin.png",
-                          width: 30,
-                          height: 30,
+                        GestureDetector(
+                          onTap: () {
+                            html.window
+                                .open('http://shorturl.at/irABY', '_self');
+                          },
+                          child: Image.asset(
+                            "assets/images/linkedin.png",
+                            width: 30,
+                            height: 30,
+                          ),
                         ),
-                        Image.asset(
-                          "assets/images/gmail.jpg",
-                          width: 30,
-                          height: 30,
+                        GestureDetector(
+                          onTap: () {
+                            html.window.open(
+                                'https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox/FMfcgzGrbHngzzwnlSTPCQppwmCXxZTq?compose=new',
+                                '_self');
+                          },
+                          child: Image.asset(
+                            "assets/images/gmail.jpg",
+                            width: 30,
+                            height: 30,
+                          ),
                         ),
                       ],
                     ),
